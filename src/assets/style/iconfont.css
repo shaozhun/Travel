@@ -1,0 +1,16 @@
+@font-face {font-family: "iconfont";
+  src: url('./iconfont/iconfont.eot?t=1584895712725'); /* IE9 */
+  src: url('./iconfont/iconfont.eot?t=1584895712725#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQcAAsAAAAACHgAAAPOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqEEINBATYCJAMUCwwABCAFhG0HTRtSB1FUTuJkX2DbsCclymaRFIIgrh0GjCIAAryACm2G1gIAIB7+W+N338zsfhFJDiQOUTxDwpt4EmviSZtFGqHzIxbxbBppOzmXGbONHjEXkrZP6aXpmDRZUmOJqOYI1dzk9PcAI2ur9JEhmRiXD7CJ1/86lABEiBWa1LcopEXxf44Zr0Igv83mklW00d4AZwU0m3VdJLXwHciJ+ikMr3UZNxNoNy2Uzeb80lrgrDAXBeK4InHAOaNTGopDq1BX7CzitkprupleAW4Fvx8/RYczSZWZt9p2ME8EmV+GvsgjzYi9+bIL01nA7yNjBaAQJyptx9lFsRXstKsRe+sBLdIqSVMN68tfNFYgOpCi3fqHR5IVQdTMwk6wnsYLX4YcJokvM0wyX1ZKNcvXQvAsN6pAOzpwDx+Y5EkrayHkcq83xmXEw27AnXz7ec+nVyv0+c2Gf3yxQB6eS/fPLPuVxzz83RvXYfUpP/z4yll7V/Dwwl5+XX923rgYXzUv3XOzJr1haUytk9zRywZFnD+i1ddOeHP3y84Nmj+eLij+k30Gclk8aYjRwnjdpOHWEWlpdRRaiMNyWO3zc8hJsyE249TAbH18SK1bWBwc0WJ2LmRqgIQAa5jdQeImoFwuaz87NxgwzN01XWei9J+jEX0JwsWRNAI8k3GK/KX3Y8uP4kf5/QR0/0vrPj7NMQ8b6Wuy8rT/oe5Wc8yfb/ROdtx2Dbr9G+p5v55pLdxJZ1iDreus2Nd9dCWv7znZ7w5skHb7q+Xjy42hX68d5a9fOT+hksBJOGAj/YzbdktLuOJbHAdchg3xbdSadD9k6/n59eW+SeLDjklvgWYk/c/jQeIsn7Zb/7//xqebjSEdXqv/W90K+Pho7wfeZqTozvtpcir/7/I7NhVNaOqrotQ7PMVf2eXfyZKaakcDV7+vaRxDQGIJrQIfkLSYgqzVDKJgVkClwyqotVoH7ZYr2N9hAGUnShuWmSQQeu1C0u0pZL3uEQXzCZVhf1DrDTtotz0GTuwwF4rrJoo4hkTI90JFIBZsG5lrWFyNJN3E0bQwoNQjqilBGBUemU8WIAuiU6zRuqRoxjDElJhhPrkdMpkIVCkxIIGFy4ypyRERuOqNwgViBq42oRAOg4ggXi9IISAssNeecS38fDVEojPh0IaGKms9hNIog0NRwkV2QBTILJ0abuU1mi6SaAyDQRhFmEH5xIKYrBgBqdXTDBABE04eEFEli6CtcFdZ+PIK8zvug3bmeVWkyFGiilp9SlcVzuJ81L2IET3aEXMWWVccTxJd0wkAAAA=') format('woff2'),
+  url('./iconfont/iconfont.woff?t=1584895712725') format('woff'),
+  url('./iconfont/iconfont.ttf?t=1584895712725') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont/iconfont.svg?t=1584895712725#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
