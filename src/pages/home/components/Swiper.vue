@@ -2,13 +2,14 @@
   <div class="wrapper">
     <swiper :options="swiperOptions">
       <swiper-slide v-for="list of swiperList" :key="list.id">
-        <img class="swiper-img" :src="list.imgUrl" />
+        <img class="swiper-img" :src="list.url" />
       </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'HomeSwiper',
   data () {
@@ -18,16 +19,17 @@ export default {
         autoplay: 5000,
         loop: true
       },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/3c/3c514c20a740128b90.water.jpg_600x330_5b0eb229.jpg'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/50/50309ba1d90e4e3290.water.jpg_600x330_acaaf06b.jpg'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/2001/8b/8b7ddfe2e27d929fa3.water.jpg_600x330_302676ff.jpg'
-      }]
+      swiperList: null
+    }
+  },
+  created () {
+    this.getSwiperList()
+  },
+  methods: {
+    getSwiperList () {
+      axios.get('https://101.37.204.199/api/indexSwiperData.php').then(res => {
+        this.swiperList = res.data
+      })
     }
   }
 }

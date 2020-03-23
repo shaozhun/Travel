@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="title">热销推荐</div>
+    <div class="title"><img class="title-heart" src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="猜你喜欢">猜你喜欢</div>
     <ul>
       <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-        <img class="itemImg" :src="item.imgUrl">
+        <img class="itemImg" :src="item.url">
+        <div class="mp-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)" v-show="item.tomorrow == 1">可订明日</div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
-          <p class="item-desc">{{item.desc}}</p>
-          <button class="item-button">查看详情</button>
+          <p class="item-price">¥<span class="price">{{item.price}}</span>起 <span class="recomand">{{item.recommend}}条评论</span></p>
+          <button class="item-button">查看详情</button><div class="city">{{item.city}}</div>
         </div>
       </li>
     </ul>
@@ -15,21 +16,22 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'HomeRecommend',
   data () {
     return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/3c/3c514c20a740128b90.water.jpg_200x200_c7102a23.jpg',
-        title: '南沙百万葵园',
-        desc: '记录唯美爱情，拍摄婚纱的好去处'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1802/fb/fb1e36999b871ecba3.img.jpg_200x200_151aa3a0.jpg',
-        title: '香草世界',
-        desc: '香草世界,香草世界'
-      }]
+      recommendList: null
+    }
+  },
+  created () {
+    this.getRecommendList()
+  },
+  methods: {
+    getRecommendList () {
+      axios.get('https://101.37.204.199/api/indexLikeData.php').then(res => {
+        this.recommendList = res.data
+      })
     }
   }
 }
@@ -42,6 +44,11 @@ export default {
   line-height .8rem
   background #eee
   text-indent .2rem
+  .title-heart
+    width: .3rem
+    height: .3rem
+    margin-left: .2rem
+    padding-right .1rem
 .item
   overflow hidden
   display flex
@@ -50,6 +57,17 @@ export default {
     width 1.7rem
     height 1.7rem
     padding .1rem
+  .mp-like-tag
+    position: absolute
+    top: .1rem
+    left: .1rem
+    width: 1.02rem
+    height: .38rem
+    background-size: 100%
+    color: #fff
+    font-size: .2rem
+    line-height: .38rem
+    text-indent: .04rem
   .item-info
     flex 1
     min-width 0
@@ -58,15 +76,27 @@ export default {
       line-height .54rem
       font-size .32rem
       ellipsis()
-    .item-desc
-      line-height .4rem
-      color #ccc
-      ellipsis()
+    .item-price
+      margin-top: .22rem
+      color: #616161
+      font-size: .24rem
+      line-height: .4rem
+      color #ff8300
+      .price
+        font-size .4rem
+      .recomand
+        float right
+        margin-right 1.3rem
+        color #616161
     .item-button
       line-height .44rem
-      margin-top .16rem
+      margin-top .1rem
       color #fff
       background #ff9300
       padding 0 .1rem
       border-radius .06rem
+    .city
+      line-height .44rem
+      margin-top .1rem
+      float right
 </style>
