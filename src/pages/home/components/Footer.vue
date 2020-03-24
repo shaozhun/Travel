@@ -5,12 +5,8 @@
       <router-link to="/login"><a>登录</a></router-link>
       <a href="http://touch.qunar.com/h5/user/usercenter">我的订单</a>
       <a href="http://touch.qunar.com/h5/recent">最近浏览</a>
-      <a href="http://touch.qunar.com/h5/about">关于我们</a>
+      <router-link to="/about"><a>关于我们</a></router-link>
     </div>
-    <div class="copyright">
-      <a href="https://www.qunar.com/" class="black">触屏版</a>
-      <a href="https://www.qunar.com/index.htm">电脑版</a>
-      <p class="copyrightTitle">Qunar 京ICP备05021087 意见反馈</p></div>
   </div>
 </template>
 
@@ -38,14 +34,4 @@ export default {
   border-bottom 1px solid #cacaca
 .navUrl a
   padding-left .32rem
-.copyright
-  background #f3f3f3
-  color: #9e9e9e;
-  padding .2rem
-  text-align: center;
-  font-size: 14px;
-  .black
-    color #000
-  .copyrightTitle
-    margin-top .1rem
 </style>

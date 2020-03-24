@@ -7,6 +7,7 @@
       <Home-Recommend></Home-Recommend>
       <Home-Weekend></Home-Weekend>
       <Home-Footer></Home-Footer>
+      <Home-Copyright></Home-Copyright>
     </div>
     <div class="erweicode"  v-show="windowShow">
       <p class="info">为了更好的预览体验，请您使用手机扫码预览</p>
@@ -21,6 +22,7 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
+import HomeCopyright from './components/Copyright'
 
 export default {
   name: 'Home',
@@ -34,11 +36,10 @@ export default {
     var bIsCE = sUserAgent.match(/windows/i)
     if (bIsCE) {
       this.windowShow = true
-      console.log('请扫码预览')
     }
   },
   components: {
-    HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend, HomeFooter
+    HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend, HomeFooter, HomeCopyright
   }
 }
 </script>

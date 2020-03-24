@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="header">
-      <div class="header-left"><router-link to="/" class="router"><div class="iconfont back-icon">&#xe624;</div></router-link></div>
+      <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
       <div class="header-title">登录</div>
       <div class="header-right">注册</div>
     </div>
@@ -10,13 +10,38 @@
       <div class="tab-item" @click="accountClick" :class="{cur:tabIndex===1}">账号登录</div>
     </div>
     <div class="main" v-show="tabIndex===0">
-      <input type="text" placeholder="请输入手机号">
-      <input type="text" placeholder="请输入验证码">
+      <div class="phone border-bottom firstRow">
+        <div class="phoneinfo">手机号</div>
+        <input class="phoneinput" type="text" placeholder="请输入手机号">
+      </div>
+       <div class="phone border-bottom">
+        <div class="phoneinfo">验证码</div>
+        <input class="phoneinput" type="text" placeholder="请输入验证码">
+      </div>
+      <div class="sign">
+        <button class="signbutton">登录</button>
+      </div>
     </div>
     <div class="main" v-show="tabIndex===1">
-      <input type="text" placeholder="手机号/邮箱/用户名">
-      <input type="text" placeholder="请输入密码">
+       <div class="phone border-bottom firstRow">
+        <div class="phoneinfo">账号</div>
+        <input class="phoneinput" type="text" placeholder="手机号/邮箱/用户名">
+      </div>
+       <div class="phone border-bottom">
+        <div class="phoneinfo">密码</div>
+        <input class="phoneinput" type="text" placeholder="请输入密码">
+      </div>
+      <div class="sign">
+        <button class="signbutton">登录</button>
+      </div>
     </div>
+    <p class="info">登录即同意去哪儿<span class="underline">用户服务协议</span>和<span class="underline">隐私政策</span></p>
+    <p class="info">此页面仅作展示页面，登录注册功能后续开放</p>
+    <div class="footer">
+      <div class="pc agent"><router-link to="/">电脑版</router-link></div>
+      <div class="pc agent"><router-link to="/about">关于我们</router-link></div>
+    </div>
+    <div class="copyright">Qunar京ICP备05021087</div>
   </div>
 </template>
 
@@ -37,6 +62,9 @@ export default {
     },
     accountClick () {
       this.tabIndex = 1
+    },
+    back () {
+      this.$router.back(-1)
     }
   }
 }
@@ -49,6 +77,7 @@ export default {
   color #fff
 .app
   position relative
+  height 100vh
   .header
     display flex
     height 1.5rem
@@ -95,4 +124,49 @@ export default {
     .cur
       background #fff
       color #18a9b9
+  .footer
+    position absolute
+    bottom .8rem
+    display flex
+    flex-wrap wrap
+    width 100%
+    .agent
+      width 50%
+      text-align center
+      line-height 1rem
+      color #18a9b9
+      border-bottom 1px solid #ccc
+  .copyright
+    position absolute
+    width 100%
+    bottom .3rem
+    text-align center
+    color #ccc
+.phone
+    display flex
+    flex-wrap wrap
+  .phoneinfo
+    line-height 1rem
+    color #18a9b9
+    background #fff
+    width 20%
+    text-align center
+  .phoneinput
+    line-height 1rem
+    width 80%
+.firstRow
+  margin-top .2rem
+.sign
+  margin-top .2rem
+  text-align center
+  .signbutton
+    padding .2rem 3rem
+    background #18a9b9
+    border-radius .05rem
+.info
+  margin-top .5rem
+  text-align center
+  color #ccc
+  .underline
+    text-decoration underline
 </style>
