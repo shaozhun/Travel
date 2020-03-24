@@ -36,7 +36,7 @@
       </div>
     </div>
     <p class="info">登录即同意去哪儿<span class="underline">用户服务协议</span>和<span class="underline">隐私政策</span></p>
-    <p class="info">此页面仅作展示页面，登录注册功能后续开放</p>
+    <p class="info">此页面仅作展示，登录注册功能后续开放</p>
     <div class="footer">
       <div class="pc agent"><router-link to="/">电脑版</router-link></div>
       <div class="pc agent"><router-link to="/about">关于我们</router-link></div>
