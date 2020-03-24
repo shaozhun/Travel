@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getWeekendList () {
-      axios.get('https://101.37.204.199/api/indexWeekendData.php').then(res => {
+      axios.get('http://101.37.204.199/api/indexWeekendData.php').then(res => {
         this.weekendList = res.data
       })
     }

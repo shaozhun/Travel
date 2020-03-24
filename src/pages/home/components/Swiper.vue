@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOptions">
+    <swiper :options="swiperOptions" v-if="swiperList.length">
       <swiper-slide v-for="list of swiperList" :key="list.id">
         <img class="swiper-img" :src="list.url" />
       </swiper-slide>
@@ -19,7 +19,7 @@ export default {
         autoplay: 5000,
         loop: true
       },
-      swiperList: null
+      swiperList: []
     }
   },
   created () {
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getSwiperList () {
-      axios.get('https://101.37.204.199/api/indexSwiperData.php').then(res => {
+      axios.get('http://101.37.204.199/api/indexSwiperData.php').then(res => {
         this.swiperList = res.data
       })
     }

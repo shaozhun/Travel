@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getRecommendList () {
-      axios.get('https://101.37.204.199/api/indexLikeData.php').then(res => {
+      axios.get('http://101.37.204.199/api/indexLikeData.php').then(res => {
         this.recommendList = res.data
       })
     }

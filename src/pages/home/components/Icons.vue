@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getIconList () {
-      axios.get('https://101.37.204.199/api/indexIconData.php').then(res => {
+      axios.get('http://101.37.204.199/api/indexIconData.php').then(res => {
         this.iconList = res.data
       })
     }

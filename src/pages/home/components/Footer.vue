@@ -2,9 +2,9 @@
   <div>
     <div class="title"><p>票面价是指通过景区指定窗口售卖的纸质门票上标注的价格</P></div>
     <div class="navUrl border-bottom">
-      <a href="http://user.qunar.com/mobile/login.jsp">登录</a>
+      <router-link to="/login"><a>登录</a></router-link>
       <a href="http://touch.qunar.com/h5/user/usercenter">我的订单</a>
-      <a href="http://touch.qunar.com/h5/recent">我的订单</a>
+      <a href="http://touch.qunar.com/h5/recent">最近浏览</a>
       <a href="http://touch.qunar.com/h5/about">关于我们</a>
     </div>
     <div class="copyright">
