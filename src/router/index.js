@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Login from '@/pages/other/Login'
 import About from '@/pages/other/About'
+import Recent from '@/pages/other/Recent'
+import User from '@/pages/other/User'
 
 Vue.use(Router)
 
@@ -20,5 +22,13 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    }, {
+      path: '/recent',
+      name: 'Recent',
+      component: Recent
+    }, {
+      path: '/user',
+      name: 'User',
+      component: User
     }]
 })
