@@ -5,6 +5,7 @@ import Login from '@/pages/other/Login'
 import About from '@/pages/other/About'
 import Recent from '@/pages/other/Recent'
 import User from '@/pages/other/User'
+import City from '@/pages/city/City'
 
 Vue.use(Router)
 
@@ -30,5 +31,9 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User
+    }, {
+      path: '/city',
+      name: 'City',
+      component: City
     }]
 })
