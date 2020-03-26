@@ -36,13 +36,13 @@ export default {
     padding-left .2rem
   .header-right
     position relative
-    width 1.24rem
+    width 1.34rem
     float right
     text-align center
     color #fff
     .inner
       margin-left .1rem
-      width 1rem
+      width .85rem
       height .8rem
       ellipsis()
     .array-icon
