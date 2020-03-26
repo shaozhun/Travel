@@ -23,7 +23,6 @@ import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
 import HomeCopyright from './components/Copyright'
-
 export default {
   name: 'Home',
   data () {
