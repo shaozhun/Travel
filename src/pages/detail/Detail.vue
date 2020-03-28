@@ -49,14 +49,14 @@ export default {
         }]
       }]
     }
-  },
-  watch: {
-    // 解决跳转到之前滚动位置的问题
-    '$route': function () {
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
-    }
   }
+  // watch: {
+  //   // 解决跳转到之前滚动位置的问题
+  //   '$route': function () {
+  //     document.body.scrollTop = 0
+  //     document.documentElement.scrollTop = 0
+  //   }
+  // }
 }
 </script>
 
