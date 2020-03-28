@@ -2,7 +2,7 @@
   <div>
     <div class="title"><img class="title-heart" src="http://img1.qunarzz.com/piao/fusion/1711/89/ebc329f16c55bb02.png" alt="猜你喜欢">猜你喜欢</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <router-link tag="li" :to="'/detail/'+item.id" class="item border-bottom" v-for="item of recommendList" :key="item.id">
         <img class="itemImg" :src="item.url">
         <div class="mp-like-tag" style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)" v-show="item.tomorrow == 1">可订明日</div>
         <div class="item-info">
@@ -10,7 +10,7 @@
           <p class="item-price">¥<span class="price">{{item.price}}</span>起 <span class="recomand">{{item.recommend}}条评论</span></p>
           <button class="item-button">查看详情</button><div class="city">{{item.city}}</div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
