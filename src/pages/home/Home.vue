@@ -4,6 +4,7 @@
       <Home-Header></Home-Header>
       <Home-Swiper></Home-Swiper>
       <Home-Icons></Home-Icons>
+      <Home-HotList></Home-HotList>
       <Home-Recommend></Home-Recommend>
       <Home-Weekend></Home-Weekend>
       <Home-Footer></Home-Footer>
@@ -20,6 +21,7 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
+import HomeHotList from './components/HotList'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
 import HomeCopyright from './components/Copyright'
@@ -38,7 +40,7 @@ export default {
     }
   },
   components: {
-    HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend, HomeFooter, HomeCopyright
+    HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend, HomeFooter, HomeCopyright, HomeHotList
   }
 }
 </script>
