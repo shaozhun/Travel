@@ -7,6 +7,7 @@ import Recent from '@/pages/other/Recent'
 import User from '@/pages/other/User'
 import City from '@/pages/city/City'
 import Detail from '@/pages/detail/Detail'
+import Search from '@/pages/search/Search'
 
 Vue.use(Router)
 
@@ -40,6 +41,10 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+    }, {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }],
   scrollBehavior (to, from, savePosition) {
     return {x: 0, y: 0}

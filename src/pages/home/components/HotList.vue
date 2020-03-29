@@ -37,7 +37,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~style/mixins.styl'
 .hotlist
-  margin .2rem 0
+  margin .2rem 0 .05rem 0
   background-color #eee
   .title
     height .7rem
