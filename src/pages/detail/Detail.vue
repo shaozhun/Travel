@@ -6,7 +6,6 @@
     <Detail-Header></Detail-Header>
     <div class="content">
       <Detail-List :list="list"></Detail-List>
-      还没写详情呢啊 还没写呢~{{this.id}}
     </div>
   </div>
 </template>
@@ -61,13 +60,11 @@ export default {
   created () {
     let id = this.$route.path
     id = id.substring(8)
-    console.log(id)
     this.id = id
     this.getDetailInfo()
   },
   methods: {
     getDetailInfo () {
-      this.a = 1
       let formData = new FormData()
       formData.append('id', this.id)
       axios.post('http://101.37.204.199/api/detailById.php', formData)

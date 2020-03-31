@@ -9,7 +9,7 @@
       </div>
     </div>
     <Common-Fade>
-      <Common-Gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></Common-Gallary>
+      <Common-Gallary :list="list" v-show="showGallary" @close="handleGallaryClose"></Common-Gallary>
     </Common-Fade>
   </div>
 </template>
@@ -17,12 +17,12 @@
 <script>
 import CommonGallary from 'common/gallary/Gallary'
 import CommonFade from 'common/fade/Fade'
+import axios from 'axios'
 export default {
   name: 'Banner',
   data () {
     return {
-      imgs: ['http://img1.qunarzz.com/sight/p0/1702/78/784db65a941116cfa3.img.jpg_r_800x800_a4c0f03a.jpg',
-        'http://img1.qunarzz.com/sight/p0/1702/9f/9faf267f81a1a024a3.img.jpg_r_800x800_b7c27ffc.jpg'],
+      list: [],
       showGallary: false
     }
   },
@@ -32,9 +32,19 @@ export default {
     img_num: String
   },
   created () {
-    console.log(this.info)
+    this.getDetailBanner()
   },
   methods: {
+    getDetailBanner () {
+      let detailId = this.$route.path
+      detailId = detailId.substring(8)
+      let formData = new FormData()
+      formData.append('id', detailId)
+      axios.post('http://101.37.204.199/api/detailswiperById.php', formData)
+        .then(res => {
+          this.list = res.data
+        })
+    },
     handleBannerClick () {
       this.showGallary = true
     },
