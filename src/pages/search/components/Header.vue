@@ -43,6 +43,7 @@ export default {
               this.list = res.data
               this.hasNoData = false
             } else {
+              this.list = [] // 当为空时将值赋值为数组 不然缓存的是上一次的值
               this.hasNoData = true
             }
           })
