@@ -9,7 +9,7 @@
       </div>
     </div>
     <Common-Fade>
-      <Common-Gallary :list="list" v-show="showGallary" @close="handleGallaryClose"></Common-Gallary>
+      <Common-Gallary :list="bannerlist" v-show="showGallary" @close="handleGallaryClose"></Common-Gallary>
     </Common-Fade>
   </div>
 </template>
@@ -17,7 +17,6 @@
 <script>
 import CommonGallary from 'common/gallary/Gallary'
 import CommonFade from 'common/fade/Fade'
-import axios from 'axios'
 export default {
   name: 'Banner',
   data () {
@@ -29,22 +28,12 @@ export default {
   props: {
     banner_url: String,
     banner_title: String,
-    img_num: String
+    img_num: String,
+    bannerlist: Array
   },
   created () {
-    this.getDetailBanner()
   },
   methods: {
-    getDetailBanner () {
-      let detailId = this.$route.path
-      detailId = detailId.substring(8)
-      let formData = new FormData()
-      formData.append('id', detailId)
-      axios.post('http://101.37.204.199/api/detailswiperById.php', formData)
-        .then(res => {
-          this.list = res.data
-        })
-    },
     handleBannerClick () {
       this.showGallary = true
     },

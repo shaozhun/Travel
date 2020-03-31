@@ -40,6 +40,7 @@ export default {
     $route (n, o) {
       if (n.fullPath !== o.fullPath) {
         location.reload()
+        // this.$emit('changeid')
       }
     }
   }
