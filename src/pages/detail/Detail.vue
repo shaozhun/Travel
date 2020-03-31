@@ -4,6 +4,7 @@
     <Detail-Header></Detail-Header>
     <div class="content">
       <Detail-List :list="list"></Detail-List>
+      还没写详情呢啊 还没写呢~
     </div>
   </div>
 </template>

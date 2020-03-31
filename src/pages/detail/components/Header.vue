@@ -1,7 +1,7 @@
 <template>
   <div>
-      <router-link class="header-abs" to="/" tag="div" v-show="showAbs">
-      <div class="iconfont header-abs-back">&#xe624;</div></router-link>
+      <div class="header-abs"  v-show="showAbs" @click="backTo">
+      <div class="iconfont header-abs-back">&#xe624;</div></div>
     <div class="header-fixed" v-show="!showAbs" :style="opacityStyle">
        <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
@@ -32,6 +32,9 @@ export default {
       } else {
         this.showAbs = true
       }
+    },
+    backTo () {
+      this.$router.back(-1)
     }
   },
   // activated () {

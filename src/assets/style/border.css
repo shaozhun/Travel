@@ -1,5 +1,8 @@
 @charset "utf-8";
-* { touch-action: pan-y; } 
+/* * { touch-action: pan-y; } 
+之前加这行代码为了让搜索页面流畅
+导致无法滑动本周热门榜单
+之后再考虑 */
 .border,
 .border-top,
 .border-right,

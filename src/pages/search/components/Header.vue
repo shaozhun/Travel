@@ -3,16 +3,50 @@
   <div class="header">
       <router-link tag="div" to="/" class="header-left"><div class="iconfont back-icon">&#xe624;</div></router-link>
       <router-link to="/search" tag="div" class="header-input"><input  v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点"></router-link>
-      <div class="header-right"><div class="inner">搜索</div></div>
+      <form><div class="header-right"><div class="inner">搜索</div></div></form>
     </div>
+    <div class="search-content">
+    <ul>
+      <router-link tag="li" :to="`/detail/`+item.id" class="search-item border-bottom" v-for="(item,index) of list" :key="index">{{item.title}}</router-link >
+      <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
+    </ul>
+  </div>
   </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
   name: 'SearchHeader',
   data () {
     return {
-      keyword: ''
+      keyword: '',
+      timer: null,
+      list: [],
+      hasNoData: false
+    }
+  },
+  watch: {
+    keyword () {
+      if (this.timer) {
+        clearTimeout(this.timer)
+      }
+      if (!this.keyword) {
+        this.list = []
+        return
+      }
+      this.timer = setTimeout(() => {
+        var formData = new FormData()
+        formData.append('fname', this.keyword)
+        axios.post('http://101.37.204.199/api/welcome.php', formData)
+          .then(res => {
+            if (res.data.length) {
+              this.list = res.data
+              this.hasNoData = false
+            } else {
+              this.hasNoData = true
+            }
+          })
+      }, 500)
     }
   }
 }
@@ -59,4 +93,18 @@ export default {
       height .8rem
       color #111
       ellipsis()
+.search-content
+  z-index 1
+  overflow hidden
+  position absolute
+  top .9rem
+  left 0
+  right 0
+  bottom 0
+  background #eeeeee
+  .search-item
+    line-height .63rem
+    padding-left .2rem
+    background #fff
+    color #666
 </style>
