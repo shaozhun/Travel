@@ -2,12 +2,12 @@
 <div>
   <div class="header">
       <router-link tag="div" to="/" class="header-left"><div class="iconfont back-icon">&#xe624;</div></router-link>
-      <router-link to="/search" tag="div" class="header-input"><input  v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点"></router-link>
+      <router-link to="/search" tag="div" class="header-input"><input  v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点(广州/珠江)"></router-link>
       <form><div class="header-right"><div class="inner">搜索</div></div></form>
     </div>
-    <div class="search-content">
+    <div class="search-content" ref="search" v-show="keyword">
     <ul>
-      <router-link tag="li" :to="`/detail/`+item.id" class="search-item border-bottom" v-for="(item,index) of list" :key="index">{{item.title}}</router-link >
+      <router-link tag="li" :to="`/detail/`+item.id" class="search-item border-bottom" v-for="(item,index) of list" :key="index"><img class="liimg"  :src="item.url">{{item.title}}</router-link >
       <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
     </ul>
   </div>
@@ -15,14 +15,19 @@
 </template>
 <script>
 import axios from 'axios'
+import Bscroll from 'better-scroll'
 export default {
   name: 'SearchHeader',
   data () {
     return {
       keyword: '',
       timer: null,
-      list: [],
-      hasNoData: false
+      list: []
+    }
+  },
+  computed: {
+    hasNoData () {
+      return !this.list.length
     }
   },
   watch: {
@@ -41,14 +46,15 @@ export default {
           .then(res => {
             if (res.data.length) {
               this.list = res.data
-              this.hasNoData = false
             } else {
               this.list = [] // 当为空时将值赋值为数组 不然缓存的是上一次的值
-              this.hasNoData = true
             }
           })
       }, 500)
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search, {mouseWheel: true, click: true, tap: true})
   }
 }
 </script>
@@ -108,4 +114,9 @@ export default {
     padding-left .2rem
     background #fff
     color #666
+.liimg
+  width 1rem
+  height 1rem
+  padding .1rem
+  border-radius .25rem
 </style>
