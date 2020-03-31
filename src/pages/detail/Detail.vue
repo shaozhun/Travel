@@ -37,32 +37,13 @@ export default {
       add: '',
       bannerlist: [],
       list: [{
-        title: '成人票',
+        title: '门票',
         children: [{
-          title: '成人三馆'
+          title: '全票【周末/节假日】',
+          price: '324'
         }, {
-          title: '成人五馆'
-        }]
-      }, {
-        title: '学生票',
-        children: [{
-          title: '学生三馆'
-        }, {
-          title: '学生五馆'
-        }]
-      }, {
-        title: '儿童票',
-        children: [{
-          title: '儿童三馆'
-        }, {
-          title: '儿童五馆'
-        }]
-      }, {
-        title: '特惠票',
-        children: [{
-          title: '特惠三馆'
-        }, {
-          title: '特惠五馆'
+          title: '半价票【周末/节假日】',
+          price: '162'
         }]
       }]
     }
