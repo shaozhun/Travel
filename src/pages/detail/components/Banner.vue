@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1603/3c/3c514c20a740128b90.water.jpg_600x330_5b0eb229.jpg">
+      <img class="banner-img" :src="banner_url">
       <div class="banner-info">
-        <div class="banner-title">南沙百万葵园</div>
+        <div class="banner-title">{{banner_title}}</div>
         <div class="banner-num">
-          <span class="iconfont banner-icon">&#xe63e;</span>82</div>
+          <span class="iconfont banner-icon">&#xe63e;</span>{{img_num}}</div>
       </div>
     </div>
     <Common-Fade>
@@ -25,6 +25,14 @@ export default {
         'http://img1.qunarzz.com/sight/p0/1702/9f/9faf267f81a1a024a3.img.jpg_r_800x800_b7c27ffc.jpg'],
       showGallary: false
     }
+  },
+  props: {
+    banner_url: String,
+    banner_title: String,
+    img_num: String
+  },
+  created () {
+    console.log(this.info)
   },
   methods: {
     handleBannerClick () {
