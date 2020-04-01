@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-show="!windowShow">
+    <div v-show="!windowShow" class="shaozhun">
       <Home-Header></Home-Header>
       <Home-Swiper></Home-Swiper>
       <Home-Icons></Home-Icons>
@@ -9,6 +9,9 @@
       <Home-Weekend></Home-Weekend>
       <Home-Footer></Home-Footer>
       <Home-Copyright></Home-Copyright>
+      <div class="toast" v-show="toastShow">
+            {{toastText}}
+ </div>
     </div>
     <div class="erweicode"  v-show="windowShow">
       <p class="info">为了更好的预览体验，请您使用手机扫码预览</p>
