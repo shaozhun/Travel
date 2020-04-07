@@ -52,7 +52,7 @@ export default {
       this.tabIndex = index
     },
     getOrderList () {
-      axios.get('http://101.37.204.199/api/indexOrder.php').then(res => {
+      axios.get('http://travel.soaz.xyz/api/indexOrder.php').then(res => {
         this.orderList = res.data
       })
     }

@@ -42,7 +42,7 @@ export default {
       this.timer = setTimeout(() => {
         var formData = new FormData()
         formData.append('fname', this.keyword)
-        axios.post('http://101.37.204.199/api/welcome.php', formData)
+        axios.post('http://travel.soaz.xyz/api/welcome.php', formData)
           .then(res => {
             if (res.data.length) {
               this.list = res.data

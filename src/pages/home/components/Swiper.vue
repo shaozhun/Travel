@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getSwiperList () {
-      axios.get('http://101.37.204.199/api/indexSwiperData.php').then(res => {
+      axios.get('http://travel.soaz.xyz/api/indexSwiperData.php').then(res => {
         this.swiperList = res.data
       })
     }

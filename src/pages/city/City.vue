@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('http://101.37.204.199/api/cityData.php')
+      axios.get('http://travel.soaz.xyz//api/cityData.php')
         .then(this.handleGetCItyInfoSucc)
     },
     handleGetCItyInfoSucc (res) {

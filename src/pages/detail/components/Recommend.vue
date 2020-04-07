@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     getRecommendList () {
-      axios.get('http://101.37.204.199/api/indexLikeData.php').then(res => {
+      axios.get('http://travel.soaz.xyz/api/indexLikeData.php').then(res => {
         let list = res.data
         this.recommendList = list.slice(1, 7)
       })

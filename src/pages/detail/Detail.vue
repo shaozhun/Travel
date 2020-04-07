@@ -59,7 +59,7 @@ export default {
       this.id = id
       let formData = new FormData()
       formData.append('id', this.id)
-      axios.post('http://101.37.204.199/api/detailById.php', formData)
+      axios.post('http://travel.soaz.xyz/api/detailById.php', formData)
         .then(res => {
           this.banner_url = res.data[0].banner_url
           this.banner_title = res.data[0].title
@@ -72,7 +72,7 @@ export default {
       detailId = detailId.substring(8)
       let formData = new FormData()
       formData.append('id', detailId)
-      axios.post('http://101.37.204.199/api/detailswiperById.php', formData)
+      axios.post('http://travel.soaz.xyz/api/detailswiperById.php', formData)
         .then(res => {
           this.bannerlist = res.data
         })

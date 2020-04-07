@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getHotList () {
-      axios.get('http://101.37.204.199/api/indexHotData.php').then(res => {
+      axios.get('http://travel.soaz.xyz/api/indexHotData.php').then(res => {
         this.hotList = res.data
       })
     }
