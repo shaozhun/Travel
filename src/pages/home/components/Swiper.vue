@@ -4,7 +4,7 @@
       <swiper-slide v-for="list of swiperList" :key="list.id">
         <img class="swiper-img" :src="list.url" />
       </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
 </template>
@@ -30,13 +30,18 @@ export default {
       axios.get('http://travel.soaz.xyz/api/indexSwiperData.php').then(res => {
         this.swiperList = res.data
       })
+      axios.get('http://api.soaz.xyz/todolists').then(res => {
+        console.log(res.data)
+      })
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
-.wrapper >>> .swiper-pagination-bullet-active
-  background-color #fff !important
+.wrapper >>> .swiper-pagination-bullet-active {
+  background-color: #fff !important;
+}
+
 .wrapper {
   width: 100%;
   height: 0;

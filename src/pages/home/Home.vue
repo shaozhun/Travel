@@ -9,13 +9,10 @@
       <Home-Weekend></Home-Weekend>
       <Home-Footer></Home-Footer>
       <Home-Copyright></Home-Copyright>
-      <div class="toast" v-show="toastShow">
-            {{toastText}}
- </div>
     </div>
-    <div class="erweicode"  v-show="windowShow">
+    <div class="erweicode" v-show="windowShow">
       <p class="info">为了更好的预览体验，请您使用手机扫码预览</p>
-      <img src="~style/code_http.png" alt="">
+      <img src="~style/code_http.png" alt />
     </div>
   </div>
 </template>
@@ -48,10 +45,13 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.erweicode
-  font-size 30px
-  text-align center
-  margin-top 5rem
-  .info
-    margin-bottom 2rem
+.erweicode {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 5rem;
+
+  .info {
+    margin-bottom: 2rem;
+  }
+}
 </style>
