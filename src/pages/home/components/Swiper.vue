@@ -30,9 +30,6 @@ export default {
       axios.get('http://travel.soaz.xyz/api/indexSwiperData.php').then(res => {
         this.swiperList = res.data
       })
-      axios.get('http://api.soaz.xyz/todolists').then(res => {
-        console.log(res.data)
-      })
     }
   }
 }
