@@ -29,6 +29,7 @@
 
 <script>
 import axios from 'axios'
+import url from '../../common/api'
 import HomeCopyright from '../home/components/Copyright'
 export default {
   name: 'User',
@@ -52,7 +53,7 @@ export default {
       this.tabIndex = index
     },
     getOrderList () {
-      axios.get('http://travel.soaz.xyz/api/indexOrder.php').then(res => {
+      axios.get(url.indexOrder).then(res => {
         this.orderList = res.data
       })
     }

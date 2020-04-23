@@ -2,7 +2,13 @@ let url = {
   indexSwiperData: '/indexSwiperData.php',
   indexIconData: '/indexIconData.php',
   indexHotData: '/indexHotData.php',
-  indexWeekendData: '/indexWeekendData.php'
+  indexWeekendData: '/indexWeekendData.php',
+  detailById: '/detailById.php',
+  detailswiperById: '/detailswiperById.php',
+  indexLikeData: '/indexLikeData.php',
+  welcome: '/welcome.php',
+  indexOrder: '/indexOrder.php',
+  cityData: '/cityData.php'
 }
 
 // 开发环境和生产环境的切换

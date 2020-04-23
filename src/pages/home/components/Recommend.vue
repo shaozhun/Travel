@@ -17,6 +17,7 @@
 
 <script>
 import axios from 'axios'
+import url from '../../../common/api.js'
 export default {
   name: 'HomeRecommend',
   data () {
@@ -29,7 +30,7 @@ export default {
   },
   methods: {
     getRecommendList () {
-      axios.get('http://travel.soaz.xyz/api/indexLikeData.php').then(res => {
+      axios.get(url.indexLikeData).then(res => {
         this.recommendList = res.data
       })
     }

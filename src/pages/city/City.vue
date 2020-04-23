@@ -12,7 +12,7 @@ import CityHeader from './components/Header'
 import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlphabet from './components/Alphabet'
-
+import url from '../../common/api'
 export default {
   name: 'City',
   data () {
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('http://travel.soaz.xyz//api/cityData.php')
+      axios.get(url.cityData)
         .then(this.handleGetCItyInfoSucc)
     },
     handleGetCItyInfoSucc (res) {
