@@ -10,6 +10,8 @@
 </template>
 <script>
 import axios from 'axios'
+import url from '../../../common/api'
+
 export default {
   name: 'HomeSwiper',
   data () {
@@ -27,7 +29,7 @@ export default {
   },
   methods: {
     getSwiperList () {
-      axios.get('http://travel.soaz.xyz/api/indexSwiperData.php').then(res => {
+      axios.get(url.indexSwiperData).then(res => {
         this.swiperList = res.data
       })
     }

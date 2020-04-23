@@ -17,6 +17,8 @@
 
 <script>
 import axios from 'axios'
+import url from '../../../common/api'
+
 export default {
   name: 'HomeWeekend',
   data () {
@@ -29,11 +31,8 @@ export default {
   },
   methods: {
     getWeekendList () {
-      axios.get('http://phpapi.soaz.xyz/qunar/indexWeekendData.php').then(res => {
+      axios.get(url.indexWeekendData).then(res => {
         this.weekendList = res.data
-      })
-      axios.get('http://news.soaz.xyz/hptzgg').then(res => {
-        console.log(res.data)
       })
     }
   }

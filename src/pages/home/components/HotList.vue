@@ -15,6 +15,8 @@
 </template>
 <script>
 import axios from 'axios'
+import url from '../../../common/api'
+
 export default {
   name: 'HotList',
   data () {
@@ -27,7 +29,7 @@ export default {
   },
   methods: {
     getHotList () {
-      axios.get('http://travel.soaz.xyz/api/indexHotData.php').then(res => {
+      axios.get(url.indexHotData).then(res => {
         this.hotList = res.data
       })
     }
