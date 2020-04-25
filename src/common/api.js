@@ -12,7 +12,8 @@ let url = {
 }
 
 // 开发环境和生产环境的切换
-let host = 'http://phpapi.soaz.xyz/qunar'
+// let host = 'http://phpapi.soaz.xyz/qunar'
+let host = process.env.API_ROOT
 
 for (let key in url) {
   if (url.hasOwnProperty(key)) {
