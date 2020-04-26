@@ -13,9 +13,10 @@ export default new Vuex.Store({
   //   }
   // },
   mutations: {
-    changeCity (state, city) {
-      state.city = city
-      localStorage.city = city
+    changeCity (state, cityData) {
+      state.city = cityData.city
+      localStorage.city = cityData.city
+      localStorage.cityId = cityData.id
     }
   }
 })

@@ -12,14 +12,24 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item in hot" :key="item.id" @click="handleCityClick(item.name)">
+          <div
+            class="button-wrapper"
+            v-for="item in hot"
+            :key="item.id"
+            @click="handleCityClick(item.name,item.id)"
+          >
             <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
       <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
-        <div class="item-list" v-for="innerItem of item" :key="innerItem.key" @click="handleCityClick(innerItem.name)">
+        <div
+          class="item-list"
+          v-for="innerItem of item"
+          :key="innerItem.key"
+          @click="handleCityClick(innerItem.name,innerItem.id)"
+        >
           <div class="item border-bottom">{{innerItem.name}}</div>
         </div>
       </div>
@@ -36,9 +46,10 @@ export default {
     letter: String
   },
   methods: {
-    handleCityClick (city) {
+    handleCityClick (city, id) {
       // this.$store.dispatch('changeCity', city)
-      this.$store.commit('changeCity', city)
+      let cityData = { city, id }
+      this.$store.commit('changeCity', cityData)
       this.$router.push('/')
     }
   },
