@@ -3,7 +3,7 @@
     <div class="header">
       <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
       <div class="header-title">个人中心</div>
-      <div class="header-right">登录</div>
+      <router-link tag="div" to="/login" class="header-right">登录</router-link>
     </div>
     <div class="main">
       <div class="title">

@@ -3,7 +3,7 @@
     <div class="header">
       <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
       <div class="header-title">关于我们</div>
-      <div class="header-right">首页</div>
+      <router-link tag="div" to="/" class="header-right">首页</router-link>
     </div>
     <div class="main">
       <div class="mainInfo">
