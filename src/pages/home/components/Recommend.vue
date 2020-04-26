@@ -21,6 +21,11 @@
           style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/52/b9080e45b69b4f02.png)"
           v-show="item.tomorrow == 1"
         >可订明日</div>
+         <div
+          class="mp-like-tag"
+          style="background-image:url(https://img1.qunarzz.com/piao/fusion/1802/20/2ba6d10b17972e02.png)"
+          v-show="item.tomorrow == 2"
+        >随买随用</div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-price">
