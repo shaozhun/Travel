@@ -51,7 +51,9 @@ export default {
   },
   methods: {
     getRecommendList () {
-      axios.get(url.indexLikeData).then(res => {
+      var formData = new FormData()
+      formData.append('cityId', localStorage.cityId || 270)
+      axios.post(url.indexLikeData, formData).then(res => {
         let list = res.data
         this.recommendList = list.slice(1, 7)
       })

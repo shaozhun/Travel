@@ -6,8 +6,8 @@ let url = {
   detailById: '/detailById.php',
   detailswiperById: '/detailswiperById.php',
   indexLikeData: '/indexLikeData.php',
-  welcome: '/welcome.',
-  indexOrder: '/indexOrder.',
+  welcome: '/welcome.php',
+  indexOrder: '/indexOrder.php',
   cityData: '/cityData.php'
 }
 

@@ -51,7 +51,7 @@ export default {
     // 在这里获取到数据返回给各组件
     // 获取swiper数据
     var formData = new FormData()
-    formData.append('cityId', localStorage.cityId)
+    formData.append('cityId', localStorage.cityId || 270)
     this.getSwiperList(formData)
     // 获取ICON数据
     this.getIconList(formData)
