@@ -52,6 +52,7 @@ export default {
     // 获取swiper数据
     var formData = new FormData()
     formData.append('cityId', localStorage.cityId || '270')
+    console.log(this.$store.state.cityId)
     if (this.$store.state.cityId === '270' || this.$store.state.cityId === '264') {
       this.getSwiperList(formData)
       // 获取ICON数据
