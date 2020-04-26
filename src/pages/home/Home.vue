@@ -5,7 +5,7 @@
       <Home-Swiper :swiperList="swiperList"></Home-Swiper>
       <Home-Icons :iconList="iconList"></Home-Icons>
       <Home-HotList></Home-HotList>
-      <Home-Recommend></Home-Recommend>
+      <Home-Recommend :recommendList="recommendList"></Home-Recommend>
       <Home-Weekend :weekendList="weekendList"></Home-Weekend>
       <Home-Footer></Home-Footer>
       <Home-Copyright></Home-Copyright>
@@ -35,7 +35,8 @@ export default {
       windowShow: false,
       swiperList: [],
       iconList: [],
-      weekendList: []
+      weekendList: [],
+      recommendList: []
     }
   },
   created () {
@@ -53,9 +54,10 @@ export default {
     this.getSwiperList(formData)
     // 获取ICON数据
     this.getIconList(formData)
-
     // 获取weekend数据
     this.getWeekendList(formData)
+    // 获取猜你喜欢数据
+    this.getRecommendList(formData)
   },
   methods: {
     getSwiperList (formData) {
@@ -71,6 +73,11 @@ export default {
     getWeekendList (formData) {
       axios.post(url.indexWeekendData, formData).then(res => {
         this.weekendList = res.data
+      })
+    },
+    getRecommendList (formData) {
+      axios.post(url.indexLikeData, formData).then(res => {
+        this.recommendList = res.data
       })
     }
   },
