@@ -16,25 +16,19 @@
 </template>
 
 <script>
-import axios from 'axios'
-import url from '../../../common/api'
 
 export default {
   name: 'HomeWeekend',
   data () {
     return {
-      weekendList: null
     }
+  },
+  props: {
+    weekendList: Array
   },
   created () {
-    this.getWeekendList()
   },
   methods: {
-    getWeekendList () {
-      axios.get(url.indexWeekendData).then(res => {
-        this.weekendList = res.data
-      })
-    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
       <Home-Icons :iconList="iconList"></Home-Icons>
       <Home-HotList></Home-HotList>
       <Home-Recommend></Home-Recommend>
-      <Home-Weekend></Home-Weekend>
+      <Home-Weekend :weekendList="weekendList"></Home-Weekend>
       <Home-Footer></Home-Footer>
       <Home-Copyright></Home-Copyright>
     </div>
@@ -34,7 +34,8 @@ export default {
     return {
       windowShow: false,
       swiperList: [],
-      iconList: []
+      iconList: [],
+      weekendList: []
     }
   },
   created () {
@@ -47,21 +48,29 @@ export default {
   mounted () {
     // 在这里获取到数据返回给各组件
     // 获取swiper数据
-    this.getSwiperList()
+    var formData = new FormData()
+    formData.append('cityId', localStorage.cityId)
+    this.getSwiperList(formData)
     // 获取ICON数据
-    this.getIconList()
+    this.getIconList(formData)
+
+    // 获取weekend数据
+    this.getWeekendList(formData)
   },
   methods: {
-    getSwiperList () {
-      var formData = new FormData()
-      formData.append('cityId', localStorage.cityId)
+    getSwiperList (formData) {
       axios.post(url.indexSwiperData, formData).then(res => {
         this.swiperList = res.data
       })
     },
-    getIconList () {
-      axios.get(url.indexIconData).then(res => {
+    getIconList (formData) {
+      axios.post(url.indexIconData, formData).then(res => {
         this.iconList = res.data
+      })
+    },
+    getWeekendList (formData) {
+      axios.post(url.indexWeekendData, formData).then(res => {
+        this.weekendList = res.data
       })
     }
   },
