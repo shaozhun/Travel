@@ -14,8 +14,6 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import url from '../../../common/api'
 
 export default {
   name: 'HomeIcons',
@@ -24,19 +22,16 @@ export default {
       swiperOptions: {
         pagination: '.swiper-pagination',
         loop: false
-      },
-      iconList: null
+      }
     }
+  },
+  props: {
+    iconList: Array
   },
   created () {
-    this.getIconList()
+
   },
   methods: {
-    getIconList () {
-      axios.get(url.indexIconData).then(res => {
-        this.iconList = res.data
-      })
-    }
   },
   computed: {
     pages () {

@@ -3,7 +3,7 @@
     <div v-show="!windowShow" class="shaozhun">
       <Home-Header></Home-Header>
       <Home-Swiper :swiperList="swiperList"></Home-Swiper>
-      <Home-Icons></Home-Icons>
+      <Home-Icons :iconList="iconList"></Home-Icons>
       <Home-HotList></Home-HotList>
       <Home-Recommend></Home-Recommend>
       <Home-Weekend></Home-Weekend>
@@ -33,7 +33,8 @@ export default {
   data () {
     return {
       windowShow: false,
-      swiperList: []
+      swiperList: [],
+      iconList: []
     }
   },
   created () {
@@ -47,6 +48,8 @@ export default {
     // 在这里获取到数据返回给各组件
     // 获取swiper数据
     this.getSwiperList()
+    // 获取ICON数据
+    this.getIconList()
   },
   methods: {
     getSwiperList () {
@@ -54,6 +57,11 @@ export default {
       formData.append('cityId', localStorage.cityId)
       axios.post(url.indexSwiperData, formData).then(res => {
         this.swiperList = res.data
+      })
+    },
+    getIconList () {
+      axios.get(url.indexIconData).then(res => {
+        this.iconList = res.data
       })
     }
   },
@@ -63,6 +71,7 @@ export default {
   watch: {
     '$store.state.city': function () {
       this.getSwiperList()
+      location.reload()
     }
   }
 }

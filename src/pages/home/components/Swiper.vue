@@ -17,6 +17,7 @@ export default {
       swiperOptions: {
         pagination: '.swiper-pagination',
         autoplay: 5000,
+        initialSlide: 0,
         loop: true
       }
     }
@@ -25,11 +26,6 @@ export default {
   },
   props: {
     swiperList: Array
-  },
-  watch: {
-    swiperList () {
-      console.log(1)
-    }
   }
 }
 </script>
