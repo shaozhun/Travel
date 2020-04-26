@@ -9,8 +9,6 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
-import url from '../../../common/api'
 
 export default {
   name: 'HomeSwiper',
@@ -20,18 +18,17 @@ export default {
         pagination: '.swiper-pagination',
         autoplay: 5000,
         loop: true
-      },
-      swiperList: []
+      }
     }
   },
   created () {
-    this.getSwiperList()
   },
-  methods: {
-    getSwiperList () {
-      axios.get(url.indexSwiperData).then(res => {
-        this.swiperList = res.data
-      })
+  props: {
+    swiperList: Array
+  },
+  watch: {
+    swiperList () {
+      console.log(1)
     }
   }
 }

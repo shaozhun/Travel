@@ -2,7 +2,7 @@
   <div>
     <div v-show="!windowShow" class="shaozhun">
       <Home-Header></Home-Header>
-      <Home-Swiper></Home-Swiper>
+      <Home-Swiper :swiperList="swiperList"></Home-Swiper>
       <Home-Icons></Home-Icons>
       <Home-HotList></Home-HotList>
       <Home-Recommend></Home-Recommend>
@@ -25,11 +25,15 @@ import HomeHotList from './components/HotList'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
 import HomeCopyright from './components/Copyright'
+
+import axios from 'axios'
+import url from '../../common/api'
 export default {
   name: 'Home',
   data () {
     return {
-      windowShow: false
+      windowShow: false,
+      swiperList: []
     }
   },
   created () {
@@ -39,8 +43,27 @@ export default {
       this.windowShow = true
     }
   },
+  mounted () {
+    // 在这里获取到数据返回给各组件
+    // 获取swiper数据
+    this.getSwiperList()
+  },
+  methods: {
+    getSwiperList () {
+      var formData = new FormData()
+      formData.append('cityId', localStorage.cityId)
+      axios.post(url.indexSwiperData, formData).then(res => {
+        this.swiperList = res.data
+      })
+    }
+  },
   components: {
     HomeHeader, HomeSwiper, HomeIcons, HomeRecommend, HomeWeekend, HomeFooter, HomeCopyright, HomeHotList
+  },
+  watch: {
+    '$store.state.city': function () {
+      this.getSwiperList()
+    }
   }
 }
 </script>
