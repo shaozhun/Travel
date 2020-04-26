@@ -51,16 +51,23 @@ export default {
     // 在这里获取到数据返回给各组件
     // 获取swiper数据
     var formData = new FormData()
-    formData.append('cityId', localStorage.cityId || 270)
-    this.getSwiperList(formData)
-    // 获取ICON数据
-    this.getIconList(formData)
-    // 获取weekend数据
-    this.getWeekendList(formData)
-    // 获取猜你喜欢数据
-    this.getRecommendList(formData)
-    // 获取本周热门数据
-    this.getHotList(formData)
+    formData.append('cityId', localStorage.cityId || '270')
+    if (this.$store.state.cityId === '270' || this.$store.state.cityId === '264') {
+      this.getSwiperList(formData)
+      // 获取ICON数据
+      this.getIconList(formData)
+      // 获取weekend数据
+      this.getWeekendList(formData)
+      // 获取猜你喜欢数据
+      this.getRecommendList(formData)
+      // 获取本周热门数据
+      this.getHotList(formData)
+    } else {
+      var a = confirm('请将城市选择长沙或者广州,其他城市没有数据！')
+      if (a) {
+        this.$router.push('/city')
+      }
+    }
   },
   methods: {
     getSwiperList (formData) {
