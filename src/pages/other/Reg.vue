@@ -4,20 +4,24 @@
       <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
       <div class="header-title">注册</div>
     </div>
-    <div class="main" v-show="tabIndex===0">
+    <div class="main">
       <div class="phone border-bottom firstRow">
         <div class="phoneinfo">手机号</div>
         <input class="phoneinput" type="text" placeholder="请输入手机号">
+      </div>
+       <div class="phone border-bottom">
+        <div class="phoneinfo">图形码</div>
+        <input class="phoneinput" type="text" placeholder="请输入图形码">
       </div>
        <div class="phone border-bottom">
         <div class="phoneinfo">验证码</div>
         <input class="phoneinput" type="text" placeholder="请输入验证码">
       </div>
       <div class="sign">
-        <button class="signbutton">登录</button>
+        <button class="regbutton">注册</button>
       </div>
     </div>
-    <p class="info">登录即同意去哪儿<span class="underline">用户服务协议</span>和<span class="underline">隐私政策</span></p>
+    <p class="info">注册即同意去哪儿<span class="underline">用户服务协议</span>和<span class="underline">隐私政策</span></p>
     <p class="info">此页面仅作展示，登录注册功能后续开放</p>
     <div class="footer">
       <div class="pc agent"><router-link to="/">电脑版</router-link></div>
@@ -71,7 +75,6 @@ export default {
       width 1.24rem
       line-height 0.75rem
       margin 0 auto
-      text-align center
       color: #fff;
       font-size: .38rem;
     .header-right
@@ -139,9 +142,12 @@ export default {
 .sign
   margin-top .2rem
   text-align center
-  .signbutton
-    padding .2rem 3rem
-    background #18a9b9
+  .regbutton
+    padding .3rem 3rem
+    background #85d1db
+    font-size 16px
+    line-height 16px
+    color #fff
     border-radius .05rem
 .info
   margin-top .5rem
