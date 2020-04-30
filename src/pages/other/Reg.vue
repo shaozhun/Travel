@@ -5,7 +5,7 @@
       <div class="header-title">注册</div>
     </div>
     <div class="main">
-      <div class="phone border-bottom firstRow">
+      <div class="phone border-topbottom firstRow">
         <div class="phoneinfo">手机号</div>
         <input class="phoneinput" type="text" placeholder="请输入手机号">
       </div>
@@ -57,6 +57,12 @@ export default {
   text-align center
   font-size .4rem
   color #fff
+.border-bottom::before
+ border-bottom 1px solid #000
+.border-topbottom::before
+ border-top 1px solid #000
+.border-topbottom::after
+ border-bottom 1px solid #000
 .app
   position relative
   height 100vh
