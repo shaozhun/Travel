@@ -3,7 +3,7 @@
     <div class="header">
       <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
       <div class="header-title">登录</div>
-      <div class="header-right">注册</div>
+      <router-link tag="div" to="/reg" class="header-right">注册</router-link>
     </div>
     <div class="tab">
       <div class="tab-item" @click="messageClick" :class="{cur:tabIndex===0}">短信验证码登录</div>
@@ -87,6 +87,7 @@ export default {
       width .64rem
       line-height 0.75rem
       float left
+      margin-left .2rem
     .header-title
       width 1.24rem
       line-height 0.75rem
