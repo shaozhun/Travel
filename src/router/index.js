@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Login from '@/pages/other/Login'
+import Reg from '@/pages/other/Reg'
 import About from '@/pages/other/About'
 import Recent from '@/pages/other/Recent'
 import User from '@/pages/other/User'
@@ -21,6 +22,10 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    }, {
+      path: '/reg',
+      name: 'Reg',
+      component: Reg
     }, {
       path: '/about',
       name: 'About',
@@ -47,6 +52,6 @@ export default new Router({
       component: Search
     }],
   scrollBehavior (to, from, savePosition) {
-    return {x: 0, y: 0}
+    return { x: 0, y: 0 }
   }
 })
