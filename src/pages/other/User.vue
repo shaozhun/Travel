@@ -78,6 +78,7 @@ export default {
       width .64rem
       line-height 0.75rem
       float left
+      margin-left .2rem
     .header-title
       line-height .8rem
       color: #fff;
