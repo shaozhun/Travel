@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
+      <router-link tag="li"  :to="`/wdetail/`+item.id" class="item border-bottom" v-for="item of weekendList" :key="item.id">
         <div class="img-wrapper">
           <img class="itemImg" :src="item.url" />
         </div>
@@ -10,7 +10,7 @@
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desct}}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

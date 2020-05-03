@@ -52,7 +52,7 @@ export default new Router({
       name: 'Search',
       component: Search
     }, {
-      path: '/wdetail',
+      path: '/wdetail/:id',
       name: 'wDetail',
       component: wDetail
     }],
