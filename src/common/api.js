@@ -8,7 +8,8 @@ let url = {
   indexLikeData: '/indexLikeData.php',
   welcome: '/welcome.php',
   indexOrder: '/indexOrder.php',
-  cityData: '/cityData.php'
+  cityData: '/cityData.php',
+  weenkendTitle: '/weenendTitleByid.php'
 }
 
 // 开发环境和生产环境的切换

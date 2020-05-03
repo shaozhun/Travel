@@ -2,7 +2,7 @@
   <div class="app">
     <div class="header">
       <div class="header-left"><div class="iconfont back-icon" @click="back">&#xe624;</div></div>
-      <div class="header-title">长沙必打卡</div>
+      <div class="header-title">{{title}}</div>
     </div>
   </div>
 </template>
@@ -10,12 +10,8 @@
 <script>
 export default {
   name: 'wDetail',
-  data () {
-    return {
-    }
-  },
-  created () {
-
+  props: {
+    title: String
   },
   methods: {
     back () {
