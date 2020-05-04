@@ -24,12 +24,12 @@
         <div class="img-wrapper">
           <img
             class="itemImg"
-            src="http://img1.qunarzz.com/sight/p0/1505/c2/c27514a93e8b8392.water.jpg_640x276_9c0cfd7a.jpg"
+            src="http://img1.qunarzz.com/sight/p0/1503/46/4639516f1348047f.water.jpg_640x276_37ab51e5.jpg"
           />
         </div>
         <div class="item-info">
-          <p class="item-title">东江湖</p>
-          <p class="item-desc">急流险滩，龙景峡谷</p>
+          <p class="item-title">德夯苗寨</p>
+          <p class="item-desc">天下故乡，中国德夯</p>
         </div>
         <div class="pricewrap">
           <p class="item-price">
