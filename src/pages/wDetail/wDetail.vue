@@ -1,7 +1,7 @@
 <template>
   <div>
     <detail-header :title="title"></detail-header>
-    <Detail-Main></Detail-Main>
+    <Detail-Main :mainList="mainList"></Detail-Main>
   </div>
 </template>
 <script>
@@ -14,7 +14,8 @@ export default {
   name: 'wDetail',
   data () {
     return {
-      title: ''
+      title: '',
+      mainList: []
     }
   },
   components: {
@@ -22,6 +23,7 @@ export default {
   },
   mounted () {
     this.getTitle()
+    this.getMain()
   },
   methods: {
     getTitle () {
@@ -29,7 +31,11 @@ export default {
       formData.append('id', this.$route.params.id)
       axios.post(url.weenkendTitle, formData).then(res => {
         this.title = res.data[0].title
-        console.log(this.title)
+      })
+    },
+    getMain () {
+      axios.post(url.weekendDetail).then(res => {
+        this.mainList = res.data
       })
     }
   },
@@ -38,6 +44,7 @@ export default {
     '$route': function (to, from) {
       // 拿到目标参数 to.query.id 去再次请求数据接口
       this.getTitle()
+      this.getMain()
     }
   }
 }

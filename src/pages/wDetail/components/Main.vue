@@ -1,40 +1,21 @@
 <template>
   <div>
     <ul>
-      <li class="item border-bottom clear">
+      <li class="item border-bottom clear" v-for="item in mainList" :key="item.id">
         <div class="img-wrapper">
           <img
             class="itemImg"
-            src="http://img1.qunarzz.com/sight/p0/1505/c2/c27514a93e8b8392.water.jpg_640x276_9c0cfd7a.jpg"
+            :src="item.url"
           />
         </div>
         <div class="item-info">
-          <p class="item-title">东江湖</p>
-          <p class="item-desc">急流险滩，龙景峡谷</p>
+          <p class="item-title">{{item.t1}}</p>
+          <p class="item-desc">{{item.p1}}</p>
         </div>
         <div class="pricewrap">
           <p class="item-price">
             ¥
-            <span class="price">100</span>
-            <span class="qi">起</span>
-          </p>
-        </div>
-      </li>
-      <li class="item border-bottom clear">
-        <div class="img-wrapper">
-          <img
-            class="itemImg"
-            src="http://img1.qunarzz.com/sight/p0/1503/46/4639516f1348047f.water.jpg_640x276_37ab51e5.jpg"
-          />
-        </div>
-        <div class="item-info">
-          <p class="item-title">德夯苗寨</p>
-          <p class="item-desc">天下故乡，中国德夯</p>
-        </div>
-        <div class="pricewrap">
-          <p class="item-price">
-            ¥
-            <span class="price">100</span>
+            <span class="price">{{item.price}}</span>
             <span class="qi">起</span>
           </p>
         </div>
@@ -51,7 +32,8 @@ export default {
     return {
     }
   },
-  created () {
+  props: {
+    mainList: Array
   },
   methods: {
   }
