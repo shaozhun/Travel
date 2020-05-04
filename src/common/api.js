@@ -10,7 +10,9 @@ let url = {
   indexOrder: '/indexOrder.php',
   cityData: '/cityData.php',
   weenkendTitle: '/weenendTitleByid.php',
-  weekendDetail: '/weekendDetail.php'
+  weekendDetailcs: '/weekendDetailcs.php',
+  weekendDetailgz: '/weekendDetailgz.php'
+
 }
 
 // 开发环境和生产环境的切换

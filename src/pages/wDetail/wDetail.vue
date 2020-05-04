@@ -34,9 +34,17 @@ export default {
       })
     },
     getMain () {
-      axios.post(url.weekendDetail).then(res => {
-        this.mainList = this.randArr(res.data)
-      })
+      console.log(localStorage.cityId)
+      if (localStorage.cityId === '270') {
+        axios.post(url.weekendDetailgz).then(res => {
+          this.mainList = this.randArr(res.data)
+        })
+      }
+      if (localStorage.cityId === '264') {
+        axios.post(url.weekendDetailcs).then(res => {
+          this.mainList = this.randArr(res.data)
+        })
+      }
     },
     randArr (arr) {
       return arr.sort(() => {
