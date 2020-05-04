@@ -34,12 +34,11 @@ export default {
  border-bottom 1px solid #000
 .app
   position relative
-  height 100vh
   .header
     display flex
-    height 1rem
+    height .9rem
     align-items center
-    background #18a9b9
+    background #00bcd4
     color #fff
     .header-left
       width .64rem

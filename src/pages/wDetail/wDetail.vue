@@ -1,10 +1,12 @@
 <template>
   <div>
     <detail-header :title="title"></detail-header>
+    <Detail-Main></Detail-Main>
   </div>
 </template>
 <script>
 import DetailHeader from './components/Header'
+import DetailMain from './components/Main'
 
 import axios from 'axios'
 import url from '../../common/api'
@@ -16,7 +18,7 @@ export default {
     }
   },
   components: {
-    DetailHeader
+    DetailHeader, DetailMain
   },
   mounted () {
     this.getTitle()
