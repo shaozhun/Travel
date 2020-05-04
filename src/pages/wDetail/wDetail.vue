@@ -35,7 +35,12 @@ export default {
     },
     getMain () {
       axios.post(url.weekendDetail).then(res => {
-        this.mainList = res.data
+        this.mainList = this.randArr(res.data)
+      })
+    },
+    randArr (arr) {
+      return arr.sort(() => {
+        return (Math.random() - 0.5)
       })
     }
   },
