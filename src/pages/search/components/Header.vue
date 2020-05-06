@@ -2,7 +2,7 @@
 <div>
   <div class="header">
       <router-link tag="div" to="/" class="header-left"><div class="iconfont back-icon">&#xe624;</div></router-link>
-      <router-link to="/search" tag="div" class="header-input"><input  v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点(广州/珠江)"></router-link>
+      <router-link to="/search" tag="div" class="header-input"><input  v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点(广州/长沙)"></router-link>
       <form><div class="header-right"><div class="inner">搜索</div></div></form>
     </div>
     <div class="search-content" ref="search" v-show="keyword">
