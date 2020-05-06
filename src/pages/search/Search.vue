@@ -1,7 +1,7 @@
 <template>
   <div>
     <Search-Header></Search-Header>
-    <Search-List v-show="showHotSearch"></Search-List>
+    <Search-List></Search-List>
   </div>
 </template>
 <script>
@@ -11,7 +11,6 @@ export default {
   name: 'Search',
   data () {
     return {
-      showHotSearch: false
     }
   },
   components: {
@@ -21,6 +20,4 @@ export default {
   }
 }
 </script>
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>
