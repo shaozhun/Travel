@@ -1,22 +1,36 @@
 <template>
   <div>
     <Search-Header></Search-Header>
-    <Search-List></Search-List>
+    <Search-List :hotSearchList="hotSearchList"></Search-List>
   </div>
 </template>
 <script>
 import SearchHeader from './components/Header'
 import SearchList from './components/List'
+import axios from 'axios'
+import url from '../../common/api'
 export default {
   name: 'Search',
   data () {
     return {
+      hotSearchList: []
     }
+  },
+  mounted () {
+    var formData = new FormData()
+    formData.append('cityId', localStorage.cityId || '270')
+    // 获取本周热门数据
+    this.getHotList(formData)
   },
   components: {
     SearchHeader, SearchList
   },
   methods: {
+    getHotList (formData) {
+      axios.post(url.indexHotData, formData).then(res => {
+        this.hotSearchList = res.data
+      })
+    }
   }
 }
 </script>
