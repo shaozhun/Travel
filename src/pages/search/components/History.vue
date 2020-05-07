@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="this.historylist.length">
     <div class="title">搜索历史</div>
     <div class="mp-history-conouter">
       <div class="mp-history-coninner">
