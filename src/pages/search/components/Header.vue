@@ -45,7 +45,7 @@ export default {
     }
   },
   computed: {
-    // hasNoData () {
+    // keyword () {
     //   return !this.list.length
     // }
   },
@@ -58,6 +58,7 @@ export default {
         this.keyword = item
       }
       let historylist = JSON.parse(localStorage.getItem('history')) || []
+      this.keyword = this.keyword.replace(/\s*/g, '')
       historylist.push(this.keyword)
       historylist = Array.from(new Set([...historylist]))
       localStorage.setItem('history', JSON.stringify(historylist))
