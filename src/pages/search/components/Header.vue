@@ -57,31 +57,35 @@ export default {
       if (item) {
         this.keyword = item
       }
-      let historylist = JSON.parse(localStorage.getItem('history')) || []
-      this.keyword = this.keyword.replace(/\s*/g, '')
-      historylist.push(this.keyword)
-      historylist = Array.from(new Set([...historylist]))
-      localStorage.setItem('history', JSON.stringify(historylist))
-      this.flag = true
-      if (this.timer) {
-        clearTimeout(this.timer)
+      if (this.keyword) {
+        let historylist = JSON.parse(localStorage.getItem('history')) || []
+        this.keyword = this.keyword.replace(/\s*/g, '')
+        if (this.keyword.length) {
+          historylist.push(this.keyword)
+          historylist = Array.from(new Set([...historylist]))
+          localStorage.setItem('history', JSON.stringify(historylist))
+        }
+        this.flag = true
+        if (this.timer) {
+          clearTimeout(this.timer)
+        }
+        if (!this.keyword) {
+          this.list = []
+          return
+        }
+        this.timer = setTimeout(() => {
+          var formData = new FormData()
+          formData.append('fname', this.keyword)
+          axios.post(url.welcome, formData)
+            .then(res => {
+              if (res.data.length) {
+                this.list = res.data
+              } else {
+                this.list = [] // 当为空时将值赋值为数组 不然缓存的是上一次的值
+              }
+            })
+        }, 100)
       }
-      if (!this.keyword) {
-        this.list = []
-        return
-      }
-      this.timer = setTimeout(() => {
-        var formData = new FormData()
-        formData.append('fname', this.keyword)
-        axios.post(url.welcome, formData)
-          .then(res => {
-            if (res.data.length) {
-              this.list = res.data
-            } else {
-              this.list = [] // 当为空时将值赋值为数组 不然缓存的是上一次的值
-            }
-          })
-      }, 100)
     }
   },
   watch: {

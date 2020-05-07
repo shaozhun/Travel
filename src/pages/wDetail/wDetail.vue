@@ -34,7 +34,6 @@ export default {
       })
     },
     getMain () {
-      console.log(localStorage.cityId)
       if (localStorage.cityId === '270') {
         axios.post(url.weekendDetailgz).then(res => {
           this.mainList = this.randArr(res.data)
