@@ -1,12 +1,14 @@
 <template>
   <div>
     <Search-Header></Search-Header>
+    <Search-History></Search-History>
     <Search-List :hotSearchList="hotSearchList"></Search-List>
   </div>
 </template>
 <script>
 import SearchHeader from './components/Header'
 import SearchList from './components/List'
+import SearchHistory from './components/History'
 import axios from 'axios'
 import url from '../../common/api'
 export default {
@@ -23,7 +25,7 @@ export default {
     this.getHotList(formData)
   },
   components: {
-    SearchHeader, SearchList
+    SearchHeader, SearchList, SearchHistory
   },
   methods: {
     getHotList (formData) {
