@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Search-Header></Search-Header>
-    <Search-History></Search-History>
+    <Search-Header :searchitem="searchitem"></Search-Header>
+    <Search-History @triggerItem="triggerItem"></Search-History>
     <Search-List :hotSearchList="hotSearchList"></Search-List>
   </div>
 </template>
@@ -15,7 +15,8 @@ export default {
   name: 'Search',
   data () {
     return {
-      hotSearchList: []
+      hotSearchList: [],
+      searchitem: ''
     }
   },
   mounted () {
@@ -32,6 +33,9 @@ export default {
       axios.post(url.indexHotData, formData).then(res => {
         this.hotSearchList = res.data
       })
+    },
+    triggerItem (item) {
+      this.searchitem = item
     }
   }
 }

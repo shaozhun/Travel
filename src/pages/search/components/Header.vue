@@ -49,9 +49,17 @@ export default {
     //   return !this.list.length
     // }
   },
+  props: {
+    searchitem: String
+  },
   methods: {
-    searchHandle () {
-      console.log(this.keyword)
+    searchHandle (item) {
+      if (item) {
+        this.keyword = item
+      }
+      let historylist = JSON.parse(localStorage.getItem('history') || [])
+      historylist.push(this.keyword)
+      localStorage.setItem('history', JSON.stringify(historylist))
       this.flag = true
       if (this.timer) {
         clearTimeout(this.timer)
@@ -96,6 +104,9 @@ export default {
     //       })
     //   }, 500)
     // }
+    searchitem () {
+      this.searchHandle(this.searchitem)
+    }
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search, { mouseWheel: true, click: true, tap: true })
