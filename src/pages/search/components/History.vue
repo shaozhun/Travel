@@ -25,7 +25,7 @@ export default {
     }
   },
   mounted () {
-    this.historylist = JSON.parse(localStorage.getItem('history') || [])
+    this.historylist = JSON.parse(localStorage.getItem('history')) || []
   },
   methods: {
     historyHandle (item) {

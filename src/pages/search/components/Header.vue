@@ -57,8 +57,9 @@ export default {
       if (item) {
         this.keyword = item
       }
-      let historylist = JSON.parse(localStorage.getItem('history') || [])
+      let historylist = JSON.parse(localStorage.getItem('history')) || []
       historylist.push(this.keyword)
+      historylist = Array.from(new Set([...historylist]))
       localStorage.setItem('history', JSON.stringify(historylist))
       this.flag = true
       if (this.timer) {
