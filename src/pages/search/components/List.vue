@@ -18,7 +18,7 @@
               tag="a"
               :to="`/detail/`+item.id"
               class="mp-hotsearch-item"
-              data-name="石燕湖"
+              :data-name="item.title"
               v-for="item in hotSearchList"
               :key="item.id"
             >{{item.title}}</router-link>

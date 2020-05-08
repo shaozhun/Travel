@@ -14,7 +14,7 @@
         />
       </router-link>
       <div class="header-right">
-        <div class="inner" @click="searchHandle">搜索</div>
+        <div class="inner" @click="searchHandle()">搜索</div>
       </div>
     </div>
     <div class="search-content" ref="search" v-show="flag">
