@@ -5,10 +5,16 @@
         <div class="iconfont back-icon">&#xe624;</div>
       </router-link>
       <router-link to="/search" tag="div" class="header-input">
-        <input v-model="keyword" class="search-input" type="text" placeholder="输入城市或景点(广州/长沙)" />
+        <input
+          v-model="keyword"
+          class="search-input"
+          type="text"
+          placeholder="输入城市或景点(广州/长沙)"
+          @keyup.enter="searchHandle()"
+        />
       </router-link>
       <div class="header-right">
-        <div class="inner" @click="searchHandle()">搜索</div>
+        <div class="inner" @click="searchHandle">搜索</div>
       </div>
     </div>
     <div class="search-content" ref="search" v-show="flag">

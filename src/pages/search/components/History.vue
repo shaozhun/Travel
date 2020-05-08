@@ -33,7 +33,6 @@ export default {
       this.$emit('triggerItem', item)
     },
     clearHistory () {
-      console.log(1)
       window.localStorage.removeItem('history')
       location.reload()
     }
