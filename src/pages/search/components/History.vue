@@ -1,7 +1,7 @@
 <template>
   <div v-show="this.historylist.length" class="clear">
     <div class="title">搜索历史</div>
-    <div class="clearList">清除</div>
+    <div class="clearList" @click="clearHistory">清除</div>
     <div class="mp-history-conouter">
       <div class="mp-history-coninner">
         <div
@@ -31,6 +31,11 @@ export default {
   methods: {
     historyHandle (item) {
       this.$emit('triggerItem', item)
+    },
+    clearHistory () {
+      console.log(1)
+      window.localStorage.removeItem('history')
+      location.reload()
     }
   }
 }
@@ -53,8 +58,8 @@ export default {
   float: right;
   font-size: 0.26rem;
   color: #00afc7;
-  margin-top: .25rem;
-  margin-right: .2rem;
+  margin-top: 0.25rem;
+  margin-right: 0.2rem;
 }
 
 .mp-history-conouter {
