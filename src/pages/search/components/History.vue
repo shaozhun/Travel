@@ -1,6 +1,7 @@
 <template>
-  <div v-show="this.historylist.length">
+  <div v-show="this.historylist.length" class="clear">
     <div class="title">搜索历史</div>
+    <div class="clearList">清除</div>
     <div class="mp-history-conouter">
       <div class="mp-history-coninner">
         <div
@@ -35,10 +36,25 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.clear::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
 .title {
   color: #bbc;
   font-size: 12px;
   margin: 0.3rem 0.2rem;
+  float: left;
+}
+
+.clearList {
+  float: right;
+  font-size: 0.26rem;
+  color: #00afc7;
+  margin-top: .25rem;
+  margin-right: .2rem;
 }
 
 .mp-history-conouter {
