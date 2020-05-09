@@ -1,7 +1,7 @@
 <template>
-  <div class="clear">
+  <div class="wrap">
     <div class="title">热门搜索</div>
-    <div class="change">换一批</div>
+    <div class="change" @click="changeList">换一批</div>
     <div class="mp-hotsearch-con">
       <div class="mp-hotsearch-group">
         <div class="mp-hotsearch-typecon">
@@ -34,33 +34,36 @@ export default {
   name: 'SearchList',
   props: {
     hotSearchList: Array
+  },
+  methods: {
+    changeList () {
+      this.randArr(this.hotSearchList)
+    },
+    randArr (arr) {
+      return arr.sort(() => {
+        return (Math.random() - 0.5)
+      })
+    }
   }
 }
 </script>
 <style lang="stylus" scoped>
-.clear::after {
-  clear: both;
-  display: block;
-  content: '';
+.wrap {
+  position: relative;
 }
 
 .title {
   color: #bbc;
   font-size: 12px;
-  float: left;
   margin: 0.3rem 0.2rem;
 }
 
 .change {
-  float: right;
+  position: absolute;
   font-size: 0.26rem;
   color: #00afc7;
-  margin-top: 0.25rem;
-  margin-right: 0.2rem;
-}
-
-.mp-hotsearch-con {
-  padding-top: 0.8rem;
+  top: 0.02rem;
+  right: 0.2rem;
 }
 
 .mp-hotsearch-group {
