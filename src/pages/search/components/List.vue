@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="clear">
     <div class="title">热门搜索</div>
+    <div class="change">换一批</div>
     <div class="mp-hotsearch-con">
       <div class="mp-hotsearch-group">
         <div class="mp-hotsearch-typecon">
@@ -37,10 +38,29 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+.clear::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
 .title {
   color: #bbc;
   font-size: 12px;
+  float: left;
   margin: 0.3rem 0.2rem;
+}
+
+.change {
+  float: right;
+  font-size: 0.26rem;
+  color: #00afc7;
+  margin-top: 0.25rem;
+  margin-right: 0.2rem;
+}
+
+.mp-hotsearch-con {
+  padding-top: 0.8rem;
 }
 
 .mp-hotsearch-group {
