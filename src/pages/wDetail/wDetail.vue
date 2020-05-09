@@ -55,8 +55,10 @@ export default {
     // 利用watch方法检测路由变化：
     '$route': function (to, from) {
       // 拿到目标参数 to.query.id 去再次请求数据接口
-      this.getTitle()
-      this.getMain()
+      if (to.name === 'wDetail') {
+        this.getTitle()
+        this.getMain()
+      }
     }
   }
 }
