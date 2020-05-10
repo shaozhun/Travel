@@ -71,8 +71,8 @@ export default {
   },
   methods: {
     getSwiperList (formData) {
-      axios.post(url.indexSwiperData, formData).then(res => {
-        this.swiperList = res.data
+      axios.post('http://api_travel.soaz.xyz/swiperList', { cityId: localStorage.cityId || '270' }).then(res => {
+        this.swiperList = res.data.data
       })
     },
     getIconList (formData) {
