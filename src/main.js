@@ -12,7 +12,7 @@ import 'style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 import axios from 'axios'
 import '../config/axios'
-Vue.prototype.$ajax = axios
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)

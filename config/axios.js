@@ -1,12 +1,12 @@
 import axios from 'axios'
 
 // 配置默认的host,假如你的API host是：http://api.htmlx.club
-// axios.defaults.baseURL = 'http://api.htmlx.club'
-
+axios.defaults.baseURL = process.env.API_ROOT
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
   // 在发送请求之前做些什么
-  // config.url = 'http://api_travel.soaz.xyz' + config.url
+  if (config.url === 'http://phpapi.soaz.xyz/qunar/homeList.php')
+    config.url = process.env.API_ROOT + config.url
   // if (config.method === 'post') {
   //   config.data = { "cityId": localStorage.cityId || '270' }
   // }

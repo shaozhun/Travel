@@ -25,9 +25,6 @@ import HomeHotList from './components/HotList'
 import HomeWeekend from './components/Weekend'
 import HomeFooter from './components/Footer'
 import HomeCopyright from './components/Copyright'
-
-import axios from 'axios'
-import url from '../../common/api'
 export default {
   name: 'Home',
   data () {
@@ -53,15 +50,7 @@ export default {
     var formData = new FormData()
     formData.append('cityId', localStorage.cityId || '270')
     if (this.$store.state.cityId === '270' || this.$store.state.cityId === '264') {
-      this.getSwiperList(formData)
-      // // 获取ICON数据
-      // this.getIconList(formData)
-      // // 获取weekend数据
-      // this.getWeekendList(formData)
-      // // 获取猜你喜欢数据
-      // this.getRecommendList(formData)
-      // // 获取本周热门数据
-      // this.getHotList(formData)
+      this.getHomeList(formData)
     } else {
       var a = confirm('请将城市选择长沙或者广州,其他城市没有数据！')
       if (a) {
@@ -70,30 +59,13 @@ export default {
     }
   },
   methods: {
-    getSwiperList (formData) {
-      axios.post('http://phpapi.soaz.xyz/qunar/homeList.php', formData).then(res => {
+    getHomeList (formData) {
+      this.$axios.post('homeList.php', formData).then(res => {
         this.swiperList = res.data.data.swiperList
         this.iconList = res.data.data.iconList
-      })
-    },
-    getIconList (formData) {
-      axios.post(url.indexIconData, formData).then(res => {
-        this.iconList = res.data
-      })
-    },
-    getWeekendList (formData) {
-      axios.post(url.indexWeekendData, formData).then(res => {
-        this.weekendList = res.data
-      })
-    },
-    getRecommendList (formData) {
-      axios.post(url.indexLikeData, formData).then(res => {
-        this.recommendList = res.data
-      })
-    },
-    getHotList (formData) {
-      axios.post(url.indexHotData, formData).then(res => {
-        this.hotList = res.data
+        this.hotList = res.data.data.hotList
+        this.recommendList = res.data.data.likeList
+        this.weekendList = res.data.data.weekendList
       })
     }
   },
@@ -102,7 +74,6 @@ export default {
   },
   watch: {
     '$store.state.city': function () {
-      this.getSwiperList()
       location.reload()
     }
   }
