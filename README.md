@@ -1,6 +1,6 @@
-# travel
+# 参照去哪儿网编写的旅游手机端网站
 
-> A Vue.js project
+> 网址是: http://www.qunar.soaz.xyz
 
 ## Build Setup
 
@@ -18,4 +18,3 @@ npm run build
 npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
