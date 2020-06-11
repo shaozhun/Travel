@@ -1,7 +1,7 @@
 let url = {
   indexSwiperData: '/indexSwiperData.php',
   indexIconData: '/indexIconData.php',
-  indexHotData: '/indexHotData.php',
+  indexHotData: 'indexHotData.php',
   indexWeekendData: '/indexWeekendData.php',
   detailById: '/detailById.php',
   detailswiperById: '/detailswiperById.php',

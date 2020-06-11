@@ -39,11 +39,13 @@ export default {
     }
   },
   computed: {
+    // 使用计算属性进行逻辑计算
     hasNoData () {
       return !this.list.length
     }
   },
   watch: {
+    // 使用防抖函数进行性能优化
     keyword () {
       if (this.timer) {
         clearTimeout(this.timer)
@@ -66,6 +68,7 @@ export default {
     }
   },
   mounted () {
+    // 解决滑动无法滚动问题
     this.scroll = new Bscroll(this.$refs.search, { mouseWheel: true, click: true, tap: true })
   }
 }
