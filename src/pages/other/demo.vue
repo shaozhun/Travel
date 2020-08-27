@@ -6,94 +6,10 @@
         <el-tab-pane label="FONT-AWESOME" name="FONT-AWESOME">
           <h2 class="h5">Newest</h2>
           <el-row>
-            <el-col :span="2">
+            <el-col :span="2" v-for="(item,index) in Newest" :key="index">
               <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="iconWrapper">
-                <i class="h3 fa fa-address-book"></i>
-                <div class="icon-title2">address-book</div>
+                <i :class="'h3 fa fa-'+item"></i>
+                <div class="icon-title2">{{item}}</div>
               </div>
             </el-col>
           </el-row>
@@ -108,7 +24,8 @@ export default {
   data () {
     return {
       selectDialog: true,
-      activeName: 'FONT-AWESOME'
+      activeName: 'FONT-AWESOME',
+      Newest: ['address-book', 'address-book']
     }
   },
   methods: {
