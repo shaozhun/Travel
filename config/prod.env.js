@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  API_ROOT: '"http://phpapi.soaz.xyz/qunar/"'
+  API_ROOT: '"http://phpapi.soaz.xyz/qunar/2"'
 }
